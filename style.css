@@ -1,5 +1,9 @@
-body {
-
+.container {
     display: flex;
+    flex-wrap: wrap;
+    flex-basis: 0;
+}
 
+.grid:hover {
+    background-color: yellow;
 }
