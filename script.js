@@ -1,12 +1,21 @@
 const container = document.querySelector(".container");
 
-for(let i = 0; i <=256; i++) {
+for(let i = 0; i <257; i++) {
 
     const div = document.createElement("div");
-    div.style.width = "40px";
-    div.style.height = "40px";
-    div.style.border = "solid black 2px"
+    div.style.cssText = "border: 1px solid black; height: 25px; width: 25px"; 
     div.classList.add("grid");
     container.appendChild(div);
 
 }
+
+let divList = document.querySelectorAll(".grid")
+
+divList.forEach((div) => {
+
+    div.addEventListener("click", () => {
+      div.style.backgroundColor = "red";
+    });
+  });
+
+
