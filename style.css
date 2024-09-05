@@ -2,33 +2,45 @@
     box-sizing: border-box;
     text-align: center;
     background-color: rgb(221, 179, 211);
+
   }
 
-.box {
-
+body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 960px;
     height: 960px;
+    width: 960px;
 }
 
 button {
-
-    width: 300px;
+    width: 200px;
     height: 100px;
-    background-color: rgb(129, 196, 58);
-    margin: 30px;
-    font-size: 20px;
+    background-color: rgb(115, 43, 96);
+    margin: 50px;
+    margin-top: 10px;
+    font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
-
+    align-self: center;
 }
 
+.buttons {
+    display: flex;
+}
 
-.griddy:hover {
-    background-color: yellow;
+.grid {
+
+    box-sizing: border-box;
+    border: 1px solid black;
 }

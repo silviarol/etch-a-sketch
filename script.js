@@ -1,38 +1,48 @@
 const container = document.querySelector(".container");
+const otherBtn = document.querySelector("#otherBtn");
+const btn = document.querySelector("#btn")
 
-let gridValue = 16
-
-for(let i = 0; i < gridValue*gridValue; i++) {
+function createGrid(num) {
+  
+  for(let i = 0; i < num*num; i++) {
 
     const div = document.createElement("div");
-    div.style.cssText = "border: 1px solid black; height: 60px; width: 60px"; 
     div.classList.add("grid");
+    div.style.width = `calc(960px/${num})`;
+    div.style.height = `calc(960px/${num})`;
+    
     div.addEventListener("mouseover", () => {
       div.style.backgroundColor = "red";
     });
     container.appendChild(div);
-
-}
-
-let divList = document.querySelectorAll(".grid")
-
-const otherBtn = document.querySelector("#otherBtn")
-
-otherBtn.addEventListener("click", () => {
-  location.reload();
-}); 
-
-// let gridValue = prompt("Choose a value between 16 and 100");
-
-/* function createGrid {
-  
-  for(let i = 0; i < gridValue*gridValue; i++) {
-
-  const div = document.createElement("div");
-  div.style.cssText = "border: 1px solid black; height: (960/gridValue)px; width: (960/gridValue)px"; 
-  div.classList.add("grid");
-  container.appendChild(div);
-
   }
 }
- */
+
+createGrid(16)
+
+btn.addEventListener("click", () => {
+  num = parseInt(prompt("Enter number lower than 100"));
+    if (num >= 2 && num <= 100) {
+        createGrid(num);
+    } else {
+        alert("Try a different number.");
+        location.reload()
+    }
+  deleteGrid();
+  createGrid(num);
+});
+
+function clearBoard() {
+  const wholeGrid = document.querySelectorAll(".grid");
+  wholeGrid.forEach((div)=>{
+    div.style.backgroundColor = "rgb(221, 179, 211)";
+  });
+}
+
+otherBtn.addEventListener("click", clearBoard);
+
+function deleteGrid() {
+  while(container.hasChildNodes() ){
+    container.removeChild(container.lastChild);
+  }
+}
