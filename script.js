@@ -18,4 +18,10 @@ divList.forEach((div) => {
     });
   });
 
+divList.forEach((div) => {
+
+    div.addEventListener("dblclick", () => {
+      div.style.backgroundColor = "white";
+    });
+  });
 
