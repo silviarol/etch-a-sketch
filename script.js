@@ -16,20 +16,6 @@ for(let i = 0; i < gridValue*gridValue; i++) {
 
 let divList = document.querySelectorAll(".grid")
 
-// divList.forEach((div) => {
-
-//     div.addEventListener("click", () => {
-//       div.style.backgroundColor = "red";
-//     });
-//   });
-
-// divList.forEach((div) => {
-
-//     div.addEventListener("dblclick", () => {
-//       div.style.backgroundColor = "white";
-//     });
-//   });
-
 // let gridValue = prompt("Choose a value between 16 and 100");
 
 /* function createGrid {
