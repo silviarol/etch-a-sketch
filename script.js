@@ -25,7 +25,7 @@ function createGrid(num) {
 createGrid(16)
 
 btn.addEventListener("click", () => {
-  num = parseInt(prompt("Enter number lower than 100"));
+  num = parseInt(prompt("Enter a number lower than 100"));
     if (num >= 2 && num <= 100) {
         createGrid(num);
     } else {
@@ -92,3 +92,11 @@ function whiten() {
 }
 
 whiteMarker.addEventListener("click", whiten);
+
+rainbow.addEventListener('mouseover', () => {
+  rainbow.style.backgroundColor = `rgb(${Math.floor(
+    Math.random() * 256
+  )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+    Math.random() * 256
+  )})`;
+});
