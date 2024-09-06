@@ -1,6 +1,8 @@
 const container = document.querySelector(".container");
 const otherBtn = document.querySelector("#otherBtn");
-const btn = document.querySelector("#btn")
+const btn = document.querySelector("#btn");
+const rainbow = document.querySelector("#rainbow");
+const eraser = document.querySelector("#eraser");
 
 function createGrid(num) {
   
@@ -12,8 +14,9 @@ function createGrid(num) {
     div.style.height = `calc(960px/${num})`;
     
     div.addEventListener("mouseover", () => {
-      div.style.backgroundColor = "red";
+      div.style.backgroundColor = "white";
     });
+    
     container.appendChild(div);
   }
 }
@@ -35,7 +38,7 @@ btn.addEventListener("click", () => {
 function clearBoard() {
   const wholeGrid = document.querySelectorAll(".grid");
   wholeGrid.forEach((div)=>{
-    div.style.backgroundColor = "rgb(221, 179, 211)";
+    div.style.backgroundColor = "black";
   });
 }
 
@@ -46,3 +49,33 @@ function deleteGrid() {
     container.removeChild(container.lastChild);
   }
 }
+
+
+function clickChangeBg() {
+
+    const cells = document.querySelectorAll('.grid');
+    cells.forEach(div => {
+        div.addEventListener('mouseover', () => {
+          div.style.backgroundColor = `rgb(${Math.floor(
+            Math.random() * 256
+          )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+            Math.random() * 256
+          )})`;
+        });
+    
+    })
+  }
+
+rainbow.addEventListener("click", clickChangeBg);
+
+function eraseGrid() {
+
+  const cells = document.querySelectorAll('.grid');
+  cells.forEach(div => {
+    div.addEventListener("mouseover", () => {
+      div.style.backgroundColor = "black";
+    });
+  })
+}
+
+eraser.addEventListener("click", eraseGrid);
