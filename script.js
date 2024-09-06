@@ -25,7 +25,7 @@ function createGrid(num) {
 createGrid(16)
 
 btn.addEventListener("click", () => {
-  num = parseInt(prompt("Enter a number lower than 100"));
+  num = parseInt(prompt("Enter a number between 2 and 100"));
     if (num >= 2 && num <= 100) {
         createGrid(num);
     } else {
