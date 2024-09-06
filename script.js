@@ -3,6 +3,7 @@ const otherBtn = document.querySelector("#otherBtn");
 const btn = document.querySelector("#btn");
 const rainbow = document.querySelector("#rainbow");
 const eraser = document.querySelector("#eraser");
+const whiteMarker = document.querySelector("#white");
 
 function createGrid(num) {
   
@@ -79,3 +80,15 @@ function eraseGrid() {
 }
 
 eraser.addEventListener("click", eraseGrid);
+
+function whiten() {
+
+  const cells = document.querySelectorAll('.grid');
+  cells.forEach(div => {
+    div.addEventListener("mouseover", () => {
+      div.style.backgroundColor = "white";
+    });
+  })
+}
+
+whiteMarker.addEventListener("click", whiten);
