@@ -11,7 +11,7 @@ function createGrid(num) {
 
     const div = document.createElement("div");
     div.classList.add("grid");
-    div.style.width = `calc(960px/${num})`;
+    div.style.width = `calc((960px/${num})`;
     div.style.height = `calc(960px/${num})`;
     
     div.addEventListener("mouseover", () => {
@@ -56,14 +56,16 @@ function clickChangeBg() {
 
     const cells = document.querySelectorAll('.grid');
     cells.forEach(div => {
-        div.addEventListener('mouseover', () => {
+        div.addEventListener('mouseover', (e) => {
           div.style.backgroundColor = `rgb(${Math.floor(
             Math.random() * 256
           )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
             Math.random() * 256
           )})`;
+          // let opacity = parseFloat(e.target.style.opacity) || 0.1;
+          // opacity += 0.1;
+          // e.target.style.opacity = opacity;
         });
-    
     })
   }
 
