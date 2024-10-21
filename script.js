@@ -27,13 +27,12 @@ createGrid(16)
 btn.addEventListener("click", () => {
   num = parseInt(prompt("Enter a number between 2 and 100"));
     if (num >= 2 && num <= 100) {
+        deleteGrid();
         createGrid(num);
     } else {
         alert("Try a different number.");
         location.reload()
     }
-  deleteGrid();
-  createGrid(num);
 });
 
 function clearBoard() {
